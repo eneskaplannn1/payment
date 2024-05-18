@@ -29,6 +29,9 @@ app.get("/random-action", (req, res) => {
 app.post("/webhooks/revenuecat", (req, res) => {
   const event = req.body;
 
+  console.log(event);
+  console.log(event.subscriber);
+
   if (event.type === "SUBSCRIBER_CANCELED") {
     const { subscriber } = event;
 
